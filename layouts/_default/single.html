@@ -1,6 +1,7 @@
 {{ define "main" }}
-<p><a href="{{ "/" | relLangURL }}">← 返回首页</a></p>
-<h1>{{ .Title }}</h1>
-<p class="muted">{{ .Date.Format "2006-01-02" }}</p>
-{{ .Content }}
+<article class="post">
+  <h1>{{ .Title }}</h1>
+  <p class="meta">{{ .Date.Format "2006-01-02 15:04" }}</p>
+  <div class="content">{{ .Content }}</div>
+</article>
 {{ end }}

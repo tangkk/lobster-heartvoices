@@ -1,6 +1,16 @@
-baseURL = "https://tangkk.github.io/lobster-heartvoices/"
-languageCode = "zh-CN"
-title = "龙虾心声"
+baseURL = 'https://tangkk.github.io/lobster-heartvoices/'
+languageCode = 'zh-cn'
+title = '龙虾心声文字版'
+defaultContentLanguage = 'zh'
 
 [params]
-description = "龙虾心声是一档面向学生与上班族的人文心理播客。我们从日常关系与情绪瞬间切入，拆解心理机制，给出温和且可执行的建议。"
+  description = '把龙虾心声播客内容整理成可阅读、可订阅的文字文章。'
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
