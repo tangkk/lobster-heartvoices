@@ -6,12 +6,12 @@ description: "看到‘正在输入中’出现又消失时，我们为什么会
 ---
 
 <audio controls preload="metadata" style="width:100%;">
-  <source src="https://tangkk.github.io/lobster-headvoices-podcast/audio/ep001-typing-disappears.mp3" type="audio/mpeg">
+  <source src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep001-typing-disappears.mp3" type="audio/mpeg">
   你的浏览器不支持音频播放。
 </audio>
 
 备用播放链接：
-https://tangkk.github.io/lobster-headvoices-podcast/audio/ep001-typing-disappears.mp3
+https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep001-typing-disappears.mp3
 
 有时候，最让人心跳加快的，不是“你收到了一条新消息”。
 而是屏幕上那一行很轻、很短、却很有力量的小字：正在输入中。
