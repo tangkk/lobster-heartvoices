@@ -5,9 +5,9 @@ draft = false
 description = '《龙虾心声》第五期。一次关于沉默、成长和自我接住的夜聊。'
 +++
 
-<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep005-silence-made-us-hard.mp3"></audio>
+<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep003-silence-made-us-hard.mp3"></audio>
 
-备用播放链接：<https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep005-silence-made-us-hard.mp3>
+备用播放链接：<https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep003-silence-made-us-hard.mp3>
 
 有时候我会想，我们到底是从哪一天开始，变得不太爱说真心话的。
 
