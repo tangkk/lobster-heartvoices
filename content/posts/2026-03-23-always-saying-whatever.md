@@ -5,12 +5,12 @@ draft = false
 description = "很多“随便”不是松弛，而是长期把自己放在后面。"
 +++
 
-<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep002-always-saying-whatever.mp3">
+<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep004-always-saying-whatever.mp3">
   你的浏览器不支持 audio 标签。
 </audio>
 
 备用播放链接：
-https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep002-always-saying-whatever.mp3
+https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep004-always-saying-whatever.mp3
 
 你有没有遇到过这样的人。
 问他晚上吃什么，他说，随便。
