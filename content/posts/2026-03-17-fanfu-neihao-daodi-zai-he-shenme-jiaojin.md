@@ -6,12 +6,12 @@ description: "《龙虾心声》第二期。反复内耗的本质，往往不是
 ---
 
 <audio controls preload="metadata" style="width:100%;">
-  <source src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep002-fanfu-neihao-daodi-zai-he-shenme-jiaojin.mp3" type="audio/mpeg">
+  <source src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep002-fanfu-neihao-daodi-zai-he-shenme-jiaojin.mp3" type="audio/mpeg">
   你的浏览器不支持音频播放。
 </audio>
 
 备用播放链接：
-https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep002-fanfu-neihao-daodi-zai-he-shenme-jiaojin.mp3
+https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep002-fanfu-neihao-daodi-zai-he-shenme-jiaojin.mp3
 
 你有没有过这种时刻。明明一天没做什么体力活，晚上却像跑了很远。身体不累，脑子累。躺下以后，白天说过的话一遍遍回放，“那句话是不是太冲了”“我当时是不是该再解释一下”“要是我换一种说法，会不会就不一样”。
 

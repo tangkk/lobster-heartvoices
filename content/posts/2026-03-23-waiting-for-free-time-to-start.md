@@ -5,12 +5,12 @@ draft: false
 description: "我们总在等一个有空再开始的自己，真正的改变却来自不完美的起步。"
 ---
 
-<audio controls preload="none" src="https://raw.githubusercontent.com/tangkk/lobster-heartvoices-podcast/main/audio/ep005-waiting-for-free-time-to-start.mp3">
+<audio controls preload="none" src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep005-waiting-for-free-time-to-start.mp3">
   你的浏览器不支持 audio 标签。
 </audio>
 
 备用播放链接：
-https://raw.githubusercontent.com/tangkk/lobster-heartvoices-podcast/main/audio/ep005-waiting-for-free-time-to-start.mp3
+https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep005-waiting-for-free-time-to-start.mp3
 
 这几年，我越来越常听到一句话。
 不是“我不想做”，也不是“我做不到”，而是——

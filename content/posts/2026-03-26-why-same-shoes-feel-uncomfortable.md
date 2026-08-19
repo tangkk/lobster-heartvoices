@@ -5,9 +5,9 @@ draft: false
 description: "《龙虾心声》第七期。从撞同款的不舒服出发，聊身份感、边界感和真实表达。"
 ---
 
-<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep007-why-same-shoes-feel-uncomfortable.mp3"></audio>
+<audio controls preload="none" src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep007-why-same-shoes-feel-uncomfortable.mp3"></audio>
 
-备用播放链接：<https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep007-why-same-shoes-feel-uncomfortable.mp3>
+备用播放链接：<https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep007-why-same-shoes-feel-uncomfortable.mp3>
 
 你有没有过这种时刻。
 自己刚买了一双很喜欢的鞋，穿出去那天心情特别好。

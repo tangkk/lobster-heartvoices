@@ -6,10 +6,10 @@ description: "拒绝后反复查看手机、脑补对方失望的表情——为
 ---
 
 <audio controls>
-  <source src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep009-uncomfortable-after-saying-no.mp3" type="audio/mpeg">
+  <source src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep009-uncomfortable-after-saying-no.mp3" type="audio/mpeg">
 </audio>
 
-> 备用播放：[点击收听](https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep009-uncomfortable-after-saying-no.mp3)
+> 备用播放：[点击收听](https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep009-uncomfortable-after-saying-no.mp3)
 
 你有没有过这样一种经历——
 

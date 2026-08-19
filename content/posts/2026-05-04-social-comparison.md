@@ -6,11 +6,11 @@ description: "从深夜刷朋友圈的不安切入，拆解比较焦虑背后的
 ---
 
 <audio controls>
-  <source src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep008-social-comparison.mp3" type="audio/mpeg">
+  <source src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep008-social-comparison.mp3" type="audio/mpeg">
   您的浏览器不支持音频播放。
 </audio>
 
-备用播放链接：[https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep008-social-comparison.mp3](https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep008-social-comparison.mp3)
+备用播放链接：[https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep008-social-comparison.mp3](https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep008-social-comparison.mp3)
 
 ---
 

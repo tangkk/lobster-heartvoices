@@ -6,10 +6,10 @@ description: "从手机红点、迟迟不回、回了又心虚的日常瞬间切
 ---
 
 <audio controls>
-  <source src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep010-message-reply-guilt.mp3" type="audio/mpeg">
+  <source src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep010-message-reply-guilt.mp3" type="audio/mpeg">
 </audio>
 
-> 备用播放：[点击收听](https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep010-message-reply-guilt.mp3)
+> 备用播放：[点击收听](https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep010-message-reply-guilt.mp3)
 
 收到消息不想回，但不回又有负罪感
 

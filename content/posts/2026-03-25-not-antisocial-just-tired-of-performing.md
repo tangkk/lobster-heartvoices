@@ -5,9 +5,9 @@ draft: false
 description: "《龙虾心声》第六期。聊聊表演式社交的隐形消耗，和把自己慢慢领回来的过程。"
 ---
 
-<audio controls preload="none" src="https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep006-not-antisocial-just-tired-of-performing.mp3"></audio>
+<audio controls preload="none" src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep006-not-antisocial-just-tired-of-performing.mp3"></audio>
 
-备用播放链接：<https://tangkk.github.io/lobster-heartvoices-podcast/audio/ep006-not-antisocial-just-tired-of-performing.mp3>
+备用播放链接：<https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/ep006-not-antisocial-just-tired-of-performing.mp3>
 
 有时候我们说“我不想社交了”，其实不是不想见人。
 是我们太清楚，有些场合里，见面不等于连接，热闹也不等于被理解。
