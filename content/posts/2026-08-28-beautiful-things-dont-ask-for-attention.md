@@ -5,6 +5,12 @@ draft: false
 description: "在一个所有东西都拼命争夺注意力的时代，有价值不等于被看见，被看见也不等于有价值。"
 ---
 
+<audio controls preload="none">
+  <source src="https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/preview/ep016-beautiful-things-dont-ask-for-attention.mp3" type="audio/mpeg">
+</audio>
+
+备用播放链接：https://pub-e2d65fa7f70240878f2e556592826485.r2.dev/heartvoices/preview/ep016-beautiful-things-dont-ask-for-attention.mp3
+
 最近我有一种越来越强烈的反感。
 
 打开播客平台，打开视频平台，经常能看到一种标题。
