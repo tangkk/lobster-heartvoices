@@ -27,9 +27,26 @@ jobs:
           title=req['title'].replace('"','\\"')
           desc=req['description'].replace('"','\\"')
           fm=f'''---\ntitle: "{title}"\ndate: {req['date']}\ndraft: false\ndescription: "{desc}"\n---\n\n'''
+          audio=''
+          audio_url=req.get('audio_url','').strip()
+          if audio_url:
+              audio=(f'<audio controls preload="none">\n'
+                     f'  <source src="{audio_url}" type="audio/mpeg">\n'
+                     f'</audio>\n\n'
+                     f'备用播放链接：{audio_url}\n\n')
           out=pathlib.Path('content/posts')/req['filename']
-          out.write_text(fm+body, encoding='utf-8')
+          out.write_text(fm+audio+body, encoding='utf-8')
           PY
+      - name: Verify article has preview audio when requested
+        run: |
+          set -euo pipefail
+          REQ=$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publish-preview/.*\.json$' | head -1)
+          AUDIO_URL=$(jq -r '.audio_url // empty' "$REQ")
+          FILE=$(jq -r '.filename' "$REQ")
+          if [ -n "$AUDIO_URL" ]; then
+            grep -Fq '<audio controls' "content/posts/$FILE"
+            grep -Fq "$AUDIO_URL" "content/posts/$FILE"
+          fi
       - name: Commit article
         run: |
           set -euo pipefail
