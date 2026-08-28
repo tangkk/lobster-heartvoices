@@ -7,21 +7,38 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: preview-text-heartvoices
+  cancel-in-progress: false
 
 jobs:
   publish-text:
     runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.157.0
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
       - name: Build article from canonical
+        id: article
         run: |
           set -euo pipefail
           REQ=$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publish-preview/.*\.json$' | head -1)
           test -n "$REQ"
           python - "$REQ" <<'PY'
-          import json, pathlib, sys, urllib.request
+          import json, pathlib, sys, urllib.request, os
           req=json.load(open(sys.argv[1], encoding='utf-8'))
           body=urllib.request.urlopen(req['canonical_url']).read().decode('utf-8').rstrip()+"\n"
           title=req['title'].replace('"','\\"')
@@ -36,23 +53,67 @@ jobs:
                      f'备用播放链接：{audio_url}\n\n')
           out=pathlib.Path('content/posts')/req['filename']
           out.write_text(fm+audio+body, encoding='utf-8')
+          stem=pathlib.Path(req['filename']).stem
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write(f'file={req["filename"]}\n')
+              f.write(f'stem={stem}\n')
+              f.write(f'title={req["title"]}\n')
+              f.write(f'audio_url={audio_url}\n')
           PY
-      - name: Verify article has preview audio when requested
+      - name: Verify generated article
         run: |
           set -euo pipefail
-          REQ=$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^publish-preview/.*\.json$' | head -1)
-          AUDIO_URL=$(jq -r '.audio_url // empty' "$REQ")
-          FILE=$(jq -r '.filename' "$REQ")
-          if [ -n "$AUDIO_URL" ]; then
-            grep -Fq '<audio controls' "content/posts/$FILE"
-            grep -Fq "$AUDIO_URL" "content/posts/$FILE"
+          FILE="content/posts/${{ steps.article.outputs.file }}"
+          test -s "$FILE"
+          grep -Fq '${{ steps.article.outputs.title }}' "$FILE"
+          if [ -n "${{ steps.article.outputs.audio_url }}" ]; then
+            grep -Fq '<audio controls' "$FILE"
+            grep -Fq '${{ steps.article.outputs.audio_url }}' "$FILE"
           fi
-      - name: Commit article
+      - name: Build site
+        run: hugo --minify --buildFuture --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Verify Pages artifact contains article
+        run: |
+          set -euo pipefail
+          TARGET="public/posts/${{ steps.article.outputs.stem }}/index.html"
+          test -s "$TARGET"
+          grep -Fq '${{ steps.article.outputs.title }}' "$TARGET"
+          grep -Fq '/posts/${{ steps.article.outputs.stem }}/' public/index.html
+          if [ -n "${{ steps.article.outputs.audio_url }}" ]; then
+            grep -Fq '<audio' "$TARGET"
+            grep -Fq '${{ steps.article.outputs.audio_url }}' "$TARGET"
+          fi
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - name: Commit article source
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add content/posts
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Publish preview-stage text article'
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish preview-stage text article'
+            git push
+          fi
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify online article and homepage
+        run: |
+          set -euo pipefail
+          ARTICLE_URL="${{ steps.pages.outputs.base_url }}/posts/${{ steps.article.outputs.stem }}/"
+          HOME_URL="${{ steps.pages.outputs.base_url }}/"
+          for i in 1 2 3 4 5; do
+            if curl -fsSL "$ARTICLE_URL" -o article.html && curl -fsSL "$HOME_URL" -o home.html; then
+              if grep -Fq '${{ steps.article.outputs.title }}' article.html && grep -Fq '/posts/${{ steps.article.outputs.stem }}/' home.html; then
+                if [ -z "${{ steps.article.outputs.audio_url }}" ] || grep -Fq '${{ steps.article.outputs.audio_url }}' article.html; then
+                  exit 0
+                fi
+              fi
+            fi
+            sleep 5
+          done
+          echo "Online verification failed: $ARTICLE_URL"
+          exit 1
